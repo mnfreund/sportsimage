@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+	"http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Accordion</title>
+	<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script>
+	
+	$(document).ready(function () {
+		
+		$('#accordion a.item').click(function () {
+
+			//slideup or hide all the Submenu
+			$('#accordion li').children('ul').slideUp('slow');	
+
+			window.scrollTo(0, 0);
+			
+			//remove all the "Over" class, so that the arrow reset to default
+			$('#accordion a.item').each(function () {
+				if ($(this).attr('rel')!='') {
+					$(this).removeClass($(this).attr('rel') + 'Over');	
+				}
+			});
+			
+			//show the selected submenu
+			$(this).siblings('ul').slideDown('slow');
+			
+			//add "Over" class, so that the arrow pointing down
+			$(this).addClass($(this).attr('rel') + 'Over');			
+
+			return false;
+
+		});
+	
+	});
+	
+	</script>
+	
+	<style>
+	body{
+		padding:0px;
+		margin:0px;
+	}
+	
+	/* First Level UL List */
+	#accordion {
+		margin:0;
+		padding:0;	
+		list-style:none;
+	}
+	
+		#accordion li {
+			width:267px;
+		}
+	
+		#accordion li a {
+			display: block;
+			width: 970px;
+			height: 84px;	
+			text-indent:-999em;
+			outline:none;
+		}
+		
+		/* Using CSS Sprite for menu item */
+		#accordion li a.popular {
+			background:url(menu.jpg) no-repeat 0 0;	
+		}
+
+		#accordion li a.popular:hover, .popularOver {
+			background:url(menu.jpg) no-repeat -970px 0 !important;	
+		}
+		
+		#accordion li a.category {
+			background:url(menu.jpg) no-repeat 0 -84px;	
+		}
+
+		#accordion li a.category:hover, .categoryOver {
+			background:url(menu.jpg) no-repeat -970px -84px !important;	
+		}
+		
+		#accordion li a.comment {
+			background:url(menu.jpg) no-repeat 0 -168px;	
+		}
+		
+		#accordion li a.comment:hover, .commentOver {
+			background:url(menu.jpg) no-repeat -970px -168px !important;	
+		}
+
+		#accordion li a.happy {
+			background:url(menu.jpg) no-repeat 0 -252px;	
+		}
+		
+		#accordion li a.happy:hover, .happyOver {
+			background:url(menu.jpg) no-repeat -970px -252px !important;	
+		}
+
+		#accordion li a.puppy {
+			background:url(menu.jpg) no-repeat 0 -336px;	
+		}
+		
+		#accordion li a.puppy:hover, .puppyOver {
+			background:url(menu.jpg) no-repeat -970px -336px !important;	
+		}
+
+		#accordion li a.cheese {
+			background:url(menu.jpg) no-repeat 0 -420px;	
+		}
+		
+		#accordion li a.cheese:hover, .cheeseOver {
+			background:url(menu.jpg) no-repeat -970px -420px !important;	
+		}
+		
+		/* Second Level UL List*/
+		#accordion ul {
+			width:940px;
+			margin:0;
+			padding:0;
+			display:none;
+			color:white;	
+		}
+		
+			#accordion ul li {
+				height:30px;
+			}
+			
+			/* styling of submenu item */
+			#accordion ul li a {
+				width:240px;
+				height:25px;
+				margin-left:15px;
+				padding-top:5px;
+				text-indent:0;
+				color:#ccc;
+				text-decoration:none;
+			}
+
+			/* remove border bottom of the last item */
+			#accordion ul li a.last {
+				border-bottom: none;
+			}		
+		
+	</style>
+	
+</head>
+<body>
+
+<ul style="padding-left:2px" id="accordion">
+	<li>
+		<a href="#" class="item popular" rel="popular">Popular Post</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">			
+Judge him. Call him a thug. Wrap him up and put a stereotypical bow on him.
+<br /><br /> 
+<img style="padding-left:10px" src="StoryPhoto1.jpg" align="right">
+Marc Sonnen experiences it each time he walks onto the court. His Northern Iowa basketball jersey masks his torso, but the tank top reveals his inked-up shoulders and biceps.
+<br /><br /> 
+The jeers haven’t changed in four years. “Eminem!” “Trailer trash!”
+<br /><br /> 
+Perhaps the only difference is how the taunts are administered. Today, they often come on Twitter, where one user recently wrote, “Marc Sonnen has too many tattoos for being white.”
+<br /><br /> 
+Even in his home of St. Paul, Minn., he can’t escape the judgment.
+<br /><br /> 
+About a year ago, the UNI senior shooting guard sat on the sideline at a local recreation center, waiting for the next pickup basketball game. He began a conversation with a man, who complemented him on being “such a good guy” and “really respectful.”
+<br /><br /> 
+Then Sonnen took the court. But before doing so, he discarded his shirt, revealing his tattooed body.
+<br /><br /> 
+“He looked at me like I was completely different. That I was a thug or someone who is causing trouble,” Sonnen said. “He said, ‘What the hell did you do that for?’”
+<br /><br /> 
+Few ever ask him. The expletives fly from the stands, punctuated by exclamation points, but never by question marks.
+<br /><br /> 
+The assumptions lead to a conclusion that he is another Eric Devendorf, the former Syracuse player, or Chris “Birdman” Andersen.
+<br /><br /> 
+They divert from a path that tells a story of a straight-A student, whose father says, “is an exceptional kid.” His love for his mother is the only thing that tops his passion for basketball.
+<br /><br /> 
+When he was 10, his mother, Gayle Sonnen, died of brain cancer. She was 45.
+<br /><br /> 
+And that’s why the hell he did that. The ink that covers his body from stomach to chest, from shoulder to shoulder, and down both arms is dedicated to the woman he only spent a decade with.
+<br /><br /> 
+The memorial will last forever. The judgmental stares may, too. Both bring different emotions, but connect Marc even closer to his mother.
+<br /><br /> 
+The tribute evolved over time, but it began on an October afternoon in St. Paul on a date that’s impossible for him to forget.
+</p>
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="item category" rel="category">Category</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">
+His sister, Chelsea Sonnen, older by three years, greeted him after school at the front door with disturbing news on Friday the 13th. Their mother suffered a seizure.
+<br /><br /> 
+<img style="padding-left:10px" src="StoryPhoto6.jpg" align="right">
+It had to be a joke.
+<br /><br /> 
+“When you’re the younger sibling you’re always getting pranks pulled on you,” Marc said. “So I thought, I came home and I heard that, and it was a shock to me, so I thought she was lying because when you hear something like that you don’t think it’s real. As a little kid, you’re going to think you’re just messing with me.”
+<br /><br /> 
+After some convincing, he realized it wasn’t a prank. Still, the word “seizure” didn’t mean much to a 10-year-old.
+<br /><br /> 
+“I really didn’t know what it really meant to have a seizure and stuff like that,” Marc said. “I thought maybe she’s just sick. It didn’t click to me in my brain, because I wasn’t smart enough or mature enough to know about that.
+<br /><br /> 
+“I thought it was just one day she had gotten sick. Later on, I realized a lot more.”
+<br /><br /> 
+<img style="padding-right:10px" src="StoryPhoto7.jpg" align="left">
+A conversation with his dad, Dan Sonnen, gave the situation its proper perspective. Gayle, was sick. At the time, the seizure consumed the family’s thoughts. But the world wasn’t done tugging at Marc and his family.
+<br /><br /> 
+Five days later, on Oct. 18, Chelsea’s birthday, doctors discovered what caused the seizure: a brain tumor. With the diagnosis came a life expectancy of up to four months.
+<br /><br /> 
+“Remember back to your 10-year old self, if somebody says the word cancer, it’s kind of like what?” Chelsea said. “And to be told a four-month period, that’s how much longer your mom is possibly going to be on this Earth, it’s really unfathomable. It’s something that you really can’t conceive.”
+<br /><br /> 
+Each passing day erased more of his limited time with his mother. Not old enough to grasp the weight of the situation, the hardwood gave him a sanctuary, even then.<br /><br /> 
+“He was so busy into sports, that made it a lot easier for him,” Dan said. “Because he really didn’t have any spare time, so he didn’t have to deal with any of those issues.”
+</p>
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="item comment" rel="comment">Recent Comment</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">		
+Gayle Sonnen walked into the gym, pulling the attention away from the youth basketball tournament on the court and onto her appearance. 
+<img style="padding-right:10px; padding-top:10px; padding-bottom:10px" src="StoryPhoto8.jpg" align="left">	
+Chemotherapy drained the color out of her face and pried the strength out of her body. It tried to destroy the cancer ravaging her, but instead took the hair from her head. And with it, came stares of confusion.
+<br /><br /> 
+“A lot of people on the sideline were staring at her like, who is this woman and why does she look so weird?” Marc said. “It just showed she didn’t care what she looked like or what people thought about her, as long as she was there watching me.”
+<br /><br /> 
+The sight of her walking through the doors was in itself a miracle. Gayle’s condition hadn’t improved. Dan warned his son not to expect his mother to attend the game – even if it was the championship.
+<br /><br /> 
+Neither cancer nor the looks from the crowd prevented her from experiencing her son’s shot at a title.
+<br /><br /> 
+“Boy, when he’d see her there, you could just see what an impact it had on him,” Dan said. “It meant a lot to Gayle to see him and doing good. It’s just too bad she couldn’t see the end result.”
+</p>
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="item happy" rel="happy">Recent Comment</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">	
+Marc felt sick. Chelsea joined him in the morning argument; neither wanted to go to school. Their mother laid in a bedroom with her eyes closed. She hadn’t spoken in two weeks. The cancer engulfed her brain, forcing her into a near coma state.
+<br /><br /> 
+“They were very honest with us,” Chelsea said. “We knew at that day, it was getting very close.”
+<br /><br /> 
+But still, she battled back.
+<br /><br />  
+“If you said something to her, told her you loved her and said goodbye, she’d squeeze your hand,” Dan said. “She’d still know what was going on.”
+<br /><br /> 
+<img style="padding-right:10px" src="StoryPhoto9.jpg" align="left">	
+Their pleading to stay home forced them to miss the bus, so Dan drove them to school. Chelsea had Spanish and math finals. Marc needed to take a math test. He dropped off Marc first at Nokomis Elementary before driving Chelsea to Battle Creek Middle School.
+<br /><br /> 
+“I took Chelsea and I was just driving away and I got the phone call,” Dan said.
+<br /><br /> 
+Marc sat in fourth grade math class. He doesn’t remember the teacher. He doesn’t remember the room. He just remembers the echo of the intercom. Four months and 10 days – Feb. 23, 2001 -- after his sister told him about his mom’s seizure, the same feeling of confusion entangled Marc.
+<br /><br />
+“I got a call on the intercom, ‘Marc Sonnen, could you please come to the office.’ I was thinking like, ‘I hope I didn’t do anything wrong. Am I in trouble?’”
+<br /><br /> 
+His confusion disappeared when he entered the office. The secretary and principal were crying. His dad waited for him.
+<br /><br /> 
+ “I could just tell in my dad’s face, something was wrong,” Marc said. “He told me and it broke my heart. It was something for me to realize at the moment. I didn’t even know how to react to that. Having him there though, he kind of talked me through it and helped me out a lot.”
+ <br /><br /> 
+“He said, ‘Why did she die?’ and I said, ‘Well, Marc, I guess the way I look at it, you never know how long you’re going to live,’” Dan said. “I said, ‘You just got to live your life to the fullest.’ And Gayle did. It was tough, though.”
+</p>
+
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="item puppy" rel="puppy">Recent Comment</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">
+<img style="padding-left:10px" src="StoryPhoto3.jpg" align="right"> 		
+Stevie Peterson sat inside Kendrigan Gymnasium with her iPad. She trekked nearly four hours from her St. Paul house to the Northland College campus in Ashland, Wisc.
+<br /><br />
+The journey was worth it to watch her son, Derek Peterson, play college hoops for the Bethany Lutheran Vikings.
+<br /><br /> 
+It’s a sacrifice, though.  As the women’s team at Bethany played in the matinee, the screen on her tablet flickered, displaying another game 360 miles south. UNI was in the midst of an upset win over Wichita State – its first statement win of the year.
+ <br /><br /> 
+Suddenly, the flickering images became more important than the game only feet away.
+ <br /><br /> 
+“Everybody in the stands wanted to know how Marc was doing,” Stevie said.
+ <br /><br /> 
+A crowd of about a dozen people surrounded Stevie, anticipating the Panthers’ win. The women’s game concluded, and the Bethany Lutheran men’s team took to the court.
+When the students in Cedar Falls rushed the court, the celebration expanded to an otherwise quiet gym in Wisconsin.
+ <br /><br /> 
+“I said ‘They won! And Marc hit all these 3s!’ The whole stands broke out cheering,” Stevie said. “Everybody looked up because there was nothing going on in Derek’s game. They’re like ‘What is going on?’”
+ <br /><br /> 
+For those Viking fans who know Stevie, they knew what was going on. Stevie follows every one of Marc’s games and attends as many of her son’s games as she can. When they overlap, that’s when the iPad comes out.
+ <br /><br /> 
+Stevie met Marc when he was in high school. Marc and her son played at Tartan High School. As seniors they earned the honor of being named co-captains, but their bond is much deeper than that. Derek and another high school friend, Chase Madsen, share a spot in his inked tribute on his chest, signified by their initials “DMC”.
+ <br /><br />
+<img style="padding-right:10px" src="StoryPhoto2.jpg" align="left">
+“They’re two brothers; they’ve been a part of my life,” Marc said. “They’re somebody, they’re not blood brothers, but they’re the only people I’m close like that with.”
+ <br /><br /> 
+So close, he now lives with the Petersons.
+ <br /><br /> 
+After Dan moved a couple hours north of St. Paul, Marc wanted to remain in the city. He now has a brand new remodeled room – fresh tan paint on the walls, new carpet and a tiny TV to call his own, right next to Derek’s.
+ <br /><br /> 
+“We were good, good friends and we supported each other through hard times. People passing away and stuff like that,” Derek said. “It’s just been awesome to be able have a friendship with Marc.”
+ <br /><br /> 
+The former closet turned bedroom doesn’t come with a lease or rent. It’s Marc’s to  come and go as he pleases, whatever he chooses to do after college. In return, Marc voluntarily does chores around the house, including cleaning the dog poop left behind by Stevie’s three dogs.
+ <br /><br /> 
+ “She reminds me a lot of my mom and what she did for us growing up,” Marc said. “No matter what, I always appreciate everything she does for me.”
+  <br /><br /> 
+For Stevie, a former foster care parent, she couldn’t imagine not having Marc around, chores or not.
+ <br /><br /> 
+“I would hope that she would be happy of the women that Marc has in his life that have not tried to take her place at all, but given him some semblance of mom and family, and that unconditional care that moms give their kids,” Stevie said.  “He’s a very easy person to love. It’s been an absolute pleasure to have him in our lives. We’re the lucky ones.”
+</p>
+
+		</ul>
+	</li>
+	<li>
+		<a href="#" class="item cheese" rel="cheese">Recent Comment</a>
+		<ul style="color:#EEEEEE">
+<p style="font-size: 17px; padding-left:8px">			
+The Northern Iowa basketball team constructs a line from its bench to the courtside seats in the northeast end of the McLeod Center. The thousands of fans wearing purple and gold are hushed in anticipation of the national anthem.
+ <br /><br />
+Marc stands almost perfectly still. The only movement is in his lips as he mouths, “And the home of the brave.”
+ <br /><br />
+He moves his hand to his forehead, then to his lower sternum before crossing himself left to right. Before fully walking off the court he brings his hand – a loosely closed fist with his thumb and index finger pinching --  to his lips. He kisses the hand then points to the sky.
+ <br /><br />
+ <img style="padding-right:10px" src="StoryPhoto5.jpg" align="left">
+“He always crosses himself after the national anthem, and waves up to heaven,” Dan said. “He waves up to heaven. I know she’s always on his mind.”
+ <br /><br />
+Before he walks out of the locker room, he prays to her. After a rough day of classes, he looks to her for strength. Every night before he closes his eyes, he talks with her.
+ <br /><br />
+“It’s kind of the same thing every night. I know she’s listening, just like everybody else who’s lost somebody, you’re always going to pray for that person,” Marc said. “It’s something. You’re not always going to have a sign or a talk, but in your mind you know she’s there.”
+ <br /><br />
+On his right shoulder, Gayle’s face forever follows him. Her words do too. On his right oblique, cursive writing fills a scroll. The words were taken from a letter his mother wrote to him before she died. 
+ <br /><br />
+ "...Please grow up to be a fine young man, as I know you will," Gayle wrote to her son. "As I have said I will always be with you, just in a different way now. I am at pease with the Lord in heaven, and someday in a different place we will meet again..."
+ <br /><br />
+The memorial continues on his abdomen where the stairway to heaven leads to her headstone etched upon his sternum.
+ <br /><br />
+“I think she would appreciate them. It shows how much I care for her,” Marc said. “She always treated people for the person they were. And I think she’d love them.”
+ <br /><br />
+But it’s more than any single piece of art, the first of which came when he was 18. The ink transcends the memorial on his flesh. The judgmental stares, the jeers, the labels that accompany the tattoos only display the most enduring quality he received from his mother -- her strength.
+ <br />
+ </p>
+ <img style="padding-left:20px" src="StoryPhoto4.jpg" align="right">
+ <p align="center" style="font-size: 28px; padding-left:20px; padding-top:10px">
+“I really connected with her when she went through the whole chemo thing and looked so differently when people looked at her,” Marc said. “I’m fine when people look at me like that. “I think that’s fine with me because I’m going to be my own person. If you don’t like me, you don’t like me. And I’m fine with that. But she gave me the strength to do it every single day.”
+</p>
+		</ul>
+	</li>
+</ul>
+
+</body>
+</html>

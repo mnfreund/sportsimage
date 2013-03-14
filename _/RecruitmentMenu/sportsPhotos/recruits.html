@@ -1,0 +1,449 @@
+<html>
+
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<style>
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+a.Bazata{
+	background-image: url('sportsPhotos/Bazata.png');
+	background-position:0px -178px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Bazata:hover {
+	background-position: 0px 0px;
+}
+
+
+a.Boettger{
+	background-image: url('sportsPhotos/Boettger.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Boettger:hover {
+	background-position: 0px -2px;
+}
+
+
+a.Daniels{
+	background-image: url('sportsPhotos/Daniels.png');
+	background-position:0px -178px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Daniels:hover {
+	background-position: 0px -2px;
+}
+
+
+a.Goebel{
+	background-image: url('sportsPhotos/Goebel.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Goebel:hover {
+	background-position: 0px -2px;
+}
+
+a.Gressel{
+	background-image: url('sportsPhotos/Gressel.png');
+	background-position:0px -178px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Gressel:hover {
+	background-position: 0px 0px;
+}
+
+a.Harris{
+	background-image: url('sportsPhotos/Harris.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Harris:hover {
+	background-position: 0px -2px;
+}
+
+a.Jewell{
+	background-image: url('sportsPhotos/Jewell.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Jewell:hover {
+	background-position: 0px -2px;
+}
+
+
+a.Jones{
+	background-image: url('sportsPhotos/Jones.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Jones:hover {
+	background-position: 0px 0px;
+}
+
+a.Kenny{
+	background-image: url('sportsPhotos/Kenny.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Kenny:hover {
+	background-position: 0px -2px;
+}
+
+a.King{
+	background-image: url('sportsPhotos/King.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.King:hover {
+	background-position: 0px -3px;
+}
+
+a.Mitchell{
+	background-image: url('sportsPhotos/Mitchell.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Mitchell:hover {
+	background-position: 0px -2px;
+}
+
+a.Parker{
+	background-image: url('sportsPhotos/Parker.png');
+	background-position:0px -178px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Parker:hover {
+	background-position: 0px -1px;
+}
+
+
+a.Powell{
+	background-image: url('sportsPhotos/Powell.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Powell:hover {
+	background-position: 0px -1px;
+}
+
+
+a.Rucker{
+	background-image: url('sportsPhotos/Rucker.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Rucker:hover {
+	background-position: 0px -3px;
+}
+
+a.Shimonek{
+	background-image: url('sportsPhotos/Shimonek.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Shimonek:hover {
+	background-position: 0px -2px;
+}
+
+a.Spearman{
+	background-image: url('sportsPhotos/Spearman.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Spearman:hover {
+	background-position: 0px -1px;
+}
+
+a.Wadley{
+	background-image: url('sportsPhotos/Wadley.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Wadley:hover {
+	background-position: 0px -1px;
+}
+
+a.Warfield{
+	background-image: url('sportsPhotos/Warfield.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Warfield:hover {
+	background-position: 0px -3px;
+}
+
+a.Welsh{
+	background-image: url('sportsPhotos/Welsh.png');
+	background-position:0px -180px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Welsh:hover {
+	background-position: 0px -2px;
+}
+
+a.Willies{
+	background-image: url('sportsPhotos/Willies.png');
+	background-position:0px -179px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Willies:hover {
+	background-position: 0px -1px;
+}
+
+a.Wisnieski{
+	background-image: url('sportsPhotos/Wisnieski.png');
+	background-position:0px -177px;
+	height:178px;
+	width:155px;
+	display:block;
+	cursor:pointer;
+
+}
+
+a.Wisnieski:hover {
+	background-position: 0px -1px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div>
+<table width="670">
+		<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/07/hello-my-name-is-nathan-bazata/" target="_blank" class="Bazata">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/07/hello-my-name-is-ike-boettger/" target="_blank" class="Boettger">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/07/hello-my-name-is-leshun-daniels/" target="_blank" class="Daniels">
+	</td>
+	</tr>
+		<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/11/hello-my-name-is-ol-colin-goebel/" target="_blank" class="Goebel">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/11/hello-my-name-is-dt-brant-gressel/" target="_blank" class="Gressel">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/11/hello-my-name-is-wr-andre-harris/" target="_blank" class="Harris">
+	</td>
+	</tr>
+		<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/12/hello-my-name-is-lb-josey-jewell/" target="_blank" class="Jewell">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/12/hello-my-name-is-wr-a-j-jones/" target="_blank" class="Jones">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/12/hello-my-name-is-lb-john-kenny/" target="_blank" class="Kenny">
+	</td>
+</tr>
+<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/12/hello-my-name-is-cb-desmond-king/" target="_blank" class="King">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/12/hello-my-name-is-wr-derrick-mitchell/" target="_blank" class="Mitchell">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/13/hello-my-name-is-rb-jonathan-parker/" target="_blank" class="Parker">
+	</td>
+	</tr>
+		<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/14/hello-my-name-is-wr-damond-powell" target="_blank" class="Powell">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/14/hello-my-name-is-cb-malik-rucker" target="_blank" class="Rucker">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/14/hello-my-name-is-qb-nic-shimonek" target="_blank" class="Shimonek">
+	</td>
+	</tr>
+	<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/18/hello-my-name-is-reggie-spearman/" target="_blank" class="Spearman">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/18/hello-my-name-is-akrum-wadley/" target="_blank" class="Wadley">
+	</td>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/18/hello-my-name-soloman-warfield/" target="_blank" class="Warfield">
+	</td>
+	</tr>
+	<tr>
+	<td height="190">
+	<a href="http://thegazette.com/2013/02/19/hello-my-name-is-sean-welsh/" target="_blank" class="Welsh">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/19/hello-my-name-is-derrick-willies" target="_blank" class="Willies">
+	</td>
+	<td>
+	<a href="http://thegazette.com/2013/02/19/hello-my-name-is-jon-wisnieski/" target="_blank" class="Wisnieski">
+	</td>
+		</tr>
+	</table>
+</div>
+</body>
+
+
+
+</html>

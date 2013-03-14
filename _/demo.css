@@ -1,0 +1,153 @@
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+	/* Simple page reset */
+	margin:0px;
+	padding:0px;
+}
+
+
+p{
+	/* The tut info on the bottom of the page */
+	padding:2px;
+	text-align:left;
+	line-height: 1.35;
+	font-size:16px
+}
+body{
+	/* Setting default text color, background and a font stack */
+	color:#000000;
+	font-size:16px;
+	background: #FFFFFF;
+	font-family:Arial,Tahoma,Verdana,sans-serif;
+}
+
+.mgt ul{
+	margin:0;
+	padding:0;
+}
+
+.mgt ul.container{
+	/* The topmost UL */
+	width:640px;
+	margin:0;
+	padding:2px;
+}
+
+.mgt li{
+	list-style:none;
+	text-align:left;
+}
+
+.mgt li.menu{
+	/* The main list elements */
+	padding:0px 0;
+	width:100%;
+	margin-left:0px !important;
+}
+
+.mgt li.button{
+	margin:0px
+	padding:0px;
+}
+
+.mgt li.button a{
+	/* The section titles */
+	display:block;
+	font-family:BPreplay,Arial,Helvetica,sans-serif;
+	font-size:21px;
+	height:34px;
+	overflow:hidden;
+	padding:10px 20px 0;
+	position:relative;
+	width:260px;
+}
+
+.mgt li.button a:hover{
+	/* Removing the inherited underline from the titles */
+	text-decoration:none;
+}
+
+.mgt li.button a span{
+	/* This span acts as the right part of the section's background */
+	height:44px;
+	position:absolute;
+	right:0;
+	top:0;
+	width:4px;
+	display:block;
+}
+
+/* Setting up different styles for each section color */
+
+.mgt li.button a.grey{background:url(img/grey.png) repeat-x top left; color:#000000;}
+.mgt li.button a.grey span{ background:url(img/grey.png) repeat-x top right;}
+
+/* The hover effects */
+
+.mgt li.button a:hover{ background-position:bottom left;}
+.mgt li.button a:hover span{ background-position:bottom right;}
+
+.mgt .dropdown{
+	/* The expandable lists */
+	display:none;
+	padding-top:5px;
+	padding-left:5px;
+	width:100%;
+}
+
+.mgt .dropdown li{
+	/* Each element in the expandable list */
+	background-color:#373128;
+	border:1px solid #40392C;
+	color:#CCCCCC;
+	margin:0px 0;
+	padding:0px 0px;
+}
+
+
+/* The styles below are only necessary for the demo page */
+
+.mgt h1{
+	font-family:Arial,Tahoma,Verdana,sans-serif;
+	font-size:36px;
+	font-weight:normal;
+	margin-bottom:15px;
+}
+
+.mgt h2{
+	font-family:Arial,Tahoma,Verdana,sans-serif;
+	font-size:20px;
+	font-weight:normal;
+	padding-left:5px;
+	padding-top:165px;
+	right:0;
+	text-align:left;
+	top:15px;
+}
+
+.mgt .clear{
+	clear:both;
+}
+
+.mgt #main{
+	/* The main container */
+	margin:0px auto;
+	text-align:left;
+	width:640px;
+	position:absolute;
+}
+
+.mgt #title{
+	padding-left:10px;
+
+}
+
+.mgt a, a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+.mgt a:hover{
+	text-decoration:underline;
+}
+

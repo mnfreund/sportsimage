@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Dubuque Area', 'Waterloo-Cedar Falls Area', 'State Median'],
+          ['2006', 124900, 111500, 122500],
+          ['2007', 129400, 115000, 125000],
+          ['2008', 130000, 113588, 124000],
+          ['2009', 137000, 114900, 122500],
+          ['2010', 136750, 115000, 123500],
+          ['2011', 138000, 115000, 121000],
+          ['2012', 142950, 120000, 126000]
+
+          ]);
+        var formatter = new google.visualization.NumberFormat(
+      {prefix: '$'});
+  formatter.format(data, 1); // Apply formatter to second column
+  formatter.format(data, 2); // Apply formatter to second column
+  formatter.format(data, 3); // Apply formatter to second column
+
+
+
+        var options = {
+          chartArea:{left:75, top:10},
+          colors:['red','blue','green'],
+          width: 670,
+          height: 500,
+          title:"Median Sales Price of Residential Properties",
+          titlePosition:"in"
+        };
+
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+
+    <div id="chart_div" style="width: 670px; height: 800px;"></div>
+  
+    
+  </body>
+</html>

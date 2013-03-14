@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+<title>Animated Icons (example)</title>
+
+<style type="text/css">
+
+body {
+    font-family: Arial, Sans-serif, sans;
+    text-align: left;
+    background-color: #D9D3C7;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hover-panel {
+    background-color: #333333;
+    background-image: url(http://thegazette.com/wp-content/uploads/2013/01/uihcimage.png);
+    background-position: 190px 1px;
+    background-repeat: no-repeat;
+    color: #C8C8C8;
+    float: left;
+    height: 65px;
+    width: 146px;
+    margin: 0 5px 5px 0;
+    padding: 7px;
+     -moz-transition: all 0.4s ease; /* FF3.7+ */
+       -o-transition: all 0.4s ease; /* Opera 10.5 */
+  -webkit-transition: all 0.4s ease; /* Saf3.2+, Chrome */
+          transition: all 0.4s ease;
+}
+
+.hover-panel h3 {
+    font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+    font-size: 19px;
+    line-height: 1;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.hover-panel h4 {
+    font-family: tandelle-1, tandelle-2, Impact, Sans-serif, sans;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.hover-panel p {
+    font-size: 12px;
+    width: 50%;
+}
+
+.hover-panel:hover {
+    background-color: #CC9900;
+    background-position: 20px 1px;
+}
+
+.hover-panel:hover h3 {
+    color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+}
+
+.hover-panel:hover h4 {
+    color: #FFF;
+    text-shadow: rgba(0, 0, 0, 0.398438) 0px 0px 4px;
+}
+
+.hover-panel:hover p {
+    color: #FFF:
+}
+
+#container {
+    width: 742px;
+}
+
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="displayimage">
+    <img width="655" height="357" src="http://thegazette.com/wp-content/uploads/2013/01/introimage1.jpg"> 
+</div>
+
+<div id="buttonContainer" style="width:660px; float:left">
+
+<a href="#" class="hover-panel" id="item1" data-image="http://thegazette.com/wp-content/uploads/2013/01/atrium1.jpg">
+    <h3>The Atrium</h3>
+
+    <p>Click Here</p>
+</a>
+
+
+<a href="#" class="hover-panel" id="item2" data-image="http://thegazette.com/wp-content/uploads/2013/01/fountaindiningroom1.jpg">
+    <h3>The Fountain</h3>
+
+    <p>Click Here</p>
+</a>
+
+
+<a href="#" class="hover-panel" id="item3" data-image="http://thegazette.com/wp-content/uploads/2013/01/Melrose1.jpg">
+    <h3>Melrose</h3>
+
+    <p>Click Here</p>
+</a>
+
+
+<a href="#" class="hover-panel" id="item4" data-image="http://thegazette.com/wp-content/uploads/2013/01/compasscafe1.jpg">
+    <h3>Compass</h3>
+
+    <p>Click Here</p>
+</a>
+
+
+<a href="#" class="hover-panel" id="item6" data-image="http://thegazette.com/wp-content/uploads/2013/01/IStop1.jpg">
+    <h3>"I" Stop</h3>
+    <p>Click Here</p>
+</a>
+
+<a href="#" class="hover-panel" id="item7" data-image="http://thegazette.com/wp-content/uploads/2013/01/marketplace1.jpg">
+    <h3>The Marketplace</h3>
+
+    <p>Click Here</p>
+</a>
+
+<a href="#" class="hover-panel" id="item8" data-image="http://thegazette.com/wp-content/uploads/2013/01/6-OR1.jpg">
+    <h3>6 OR</h3>
+
+    <p>Click Here</p>
+</a>
+<a href="#" class="hover-panel" id="item8" data-image="http://thegazette.com/wp-content/uploads/2013/01/totals1.jpg">
+    <h3>Combined Totals</h3>
+
+    <p>Click Here</p>
+</a>
+</div>
+
+
+
+<script type="text/javascript">
+$("#buttonContainer a").click(function(){
+    var newImage = $(this);
+    $("#displayimage img").fadeOut(600, function(){
+    $("#displayimage img").attr("src", $(newImage).data("image"));
+    $("#displayimage img").fadeIn(600)
+    });
+});
+//($(this.data("image")).fadeIn('slow', function() {
+  //    });
+    //});)
+
+
+
+</script>
+
+</body>
+</html>

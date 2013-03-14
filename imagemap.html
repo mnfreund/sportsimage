@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<style>
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#main_div
+{
+background-image:url('practicephoto.jpg');
+background-repeat:no-repeat;
+width:990px;
+height:660px;
+position:relative;
+padding:0px 0px 0px 0px;
+margin:0px 0px 0px 0px;
+}
+
+
+
+#displayContent {
+
+	position:absolute;
+	display:block;
+	width:990px;
+	height:660px;
+	background-color: #111111;
+	z-index:9999;
+	display:none;
+
+}
+#video1{
+	display:none;
+}
+
+#video2{
+	display:none;
+}
+
+#video3{
+	display:none;
+}
+
+#video4{
+	display:none;
+}
+
+#video5{
+	display:none;
+}
+
+#video6{
+	display:none;
+}
+
+#tattooName{
+
+	padding: 0px;
+	margin-top:0px;
+	margin-bottom:0px;
+	position:absolute;
+	top:15px;
+	left:850px;
+	text-align:right;
+	color:white;
+}
+
+#main_div a.dot{
+	background-image: url('icon.png');
+	height:20px;
+	width:20px;
+	display:block;
+	cursor:pointer;
+	position:absolute;
+
+}
+
+#main_div a.dot:hover {
+	background-position: 0px -20px;
+}
+
+#main_div a.dot.selected{
+	background-position:0px -40px;
+}
+
+#main_div a.storydot{
+	background-image: url('storybutton.png');
+	height:120px;
+	width:120px;
+	display:block;
+	cursor:pointer;
+	position:absolute;
+
+}
+
+#main_div a.storydot:hover {
+	background-position: 0px -120px;
+}
+
+#main_div a.storydot.selected{
+	background-position:0px -240px;
+}
+
+
+#main_div a.creditsdot{
+	background-image: url('creditsbutton.png');
+	height:70px;
+	width:70px;
+	display:block;
+	cursor:pointer;
+	position:absolute;
+
+}
+
+#main_div a.creditsdot:hover {
+	background-position: 0px -70px;
+}
+
+#main_div a.creditsdot.selected{
+	background-position:0px -140px;
+}
+
+
+
+
+#returnButton{
+	background-image: url('homebutton.png');
+	cursor:pointer;
+	top:5px;
+	left:5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	cursor:pointer;
+	display:block;
+	border:0px;
+	height:70px;
+	width:70px;
+	position:absolute;
+
+}
+
+#returnButton:hover {
+	background-position: 0px -70px;
+}
+
+#pageTitle{
+	position:absolute;
+	left:90px;
+	top:17px;
+	font-size: 49px;
+	color:white;
+}
+
+#videoDiv{
+	position:relative;
+	left:5px;
+}
+
+#credits{
+	z-index:9999;
+	position:absolute;
+	top:120px;
+	left:720px;
+	display:none;
+}
+
+#textBox{
+	position:absolute; 
+	top:360px; 
+	left:20px; 
+	color:white;
+	font-size:20px;
+	width:500px;
+
+
+}
+
+#signature{
+	font-family: 'Monotype Corsiva';
+	font-size: 30px;
+	color:white;
+}
+
+
+</style>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+var creditsVis = false;
+
+$('a.dot').click(function(){
+
+	var hash = $(this).attr("content");
+	var hash_content = $(hash).html();
+
+
+
+	creditsVis = false;
+	$("#creditsButton").removeClass('selected');
+	$('#credits').fadeOut("slow");
+
+	$('a.dot').removeClass('selected');
+	$(this).addClass('selected');
+	if ($(this).hasClass('video')) {
+		$("#pageTitle").html($(this).attr('name'));
+		$("#contentHolder").html(hash_content);
+	} else {
+		$("#pageTitle").html($(this).attr('name'));
+		$("#contentHolder").html($(this).attr('content'));
+	}
+	
+	$("#displayContent").fadeIn("slow");
+
+});
+
+
+$('a.storydot').click(function(){
+
+	
+	$('a.dot'). removeClass('selected');
+	creditsVis = false;
+	$("#creditsButton").removeClass('selected');
+	$('#credits').fadeOut("slow");
+	$(this).addClass('selected');
+	$("#pageTitle").html($(this).attr('name'));
+	$("#contentHolder").html($(this).attr('content'));
+	$("#displayContent").fadeIn("slow");
+
+});
+
+
+
+$("#returnButton").click(function(){
+
+	$('a.dot'). removeClass('selected');
+	$('a.storydot').removeClass('selected');
+	$("#displayContent").fadeOut("slow");
+	$("#contentHolder").html('banana');
+
+
+
+});
+
+
+$("#creditsButton").click(function(){
+
+	if(creditsVis == false){
+		$(this).addClass('selected');
+		$('#credits').fadeIn("slow");
+		creditsVis = true;
+	}else{
+		creditsVis = false;
+		$(this).removeClass('selected');
+		$('#credits').fadeOut("slow");
+	}
+
+});
+
+
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="displayContent">
+		<div id="returnButton"></div><h3 id="pageTitle">Spaceholder</h3>
+		<div id="contentHolder" style="top:100px; left">
+		</div>
+</div>
+
+
+
+<div id="main_div">
+	<div id="credits">
+	<img src="creditsbubble.png">
+</div>
+	<a class="storydot" name="Beyond the Ink" content="<br /><br /><br /><br /><br /><iframe width=990px height = 560px style='border:0' src='accordian/jquery-accordion/index2.html'></iframe>" style="top:495px; left:122px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Story Button');return false;"></a>
+
+	<a class="creditsdot" id="creditsButton" content="" name="Credits" style="top:555px; left:40px" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Credits Button');return false;"></a>
+
+	<a class="dot video" name="Stairway to Heaven" content='#video1' style="top:620px; left:543px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Stairway Button');return false;"></a>
+
+	<a class="dot video" name="Gayle's Portrait" content='#video6' style="top:440px; left:275px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Gayle Button');return false;"></a>
+
+	<a class="dot video" name="A Family Tribute" content='#video3'style="top:460px; left:486px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Family Tribute Button');return false;"></a>
+
+	<a class="dot video" name="A Letter to her Son" content='#video5' style="top:600px; left:370px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Letter Button');return false;"></a>
+
+	<a class="dot video" name="His Brothers" content='#video2'style="top:490px; left:636px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'Brothers Button');return false;"></a>
+
+	<a class="dot video" name="Where it all Started" content='#video4'style="top:399px; left:759px;" href="#" onClick="recordOutboundLink(this, 'Sonnen Story', 'All Started Button');return false;"></a>
+
+
+</div>
+
+
+
+
+
+<!--stairway-->
+<div id="video1" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video1.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+
+<img style="position:absolute; top:0px; left:570px" src="stairwayphoto.jpg">
+<p id="textBox">"I'm sure right now, if you believe in heaven and everything, she's looking down smiling."</p>
+<p id="signature" style="position:absolute; left:150px; top:430px">- Dan Sonnen, Marc's father</p>
+<p style="position:absolute; top:460px; left:295px; color:white; font-size:14px">on Marc's mother, Gayle</p>
+</div>
+</div>
+
+<!--Heart-->
+<div id="video2" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video2.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+<img style="position:absolute; top:0px; left:570px" src="heart.jpg">
+<p id="textBox">"His whole body is a temple to his mom. And it's a huge tribute to his mom, except he does have the initials for Chase and Derek (his two best friends)."</p>
+<p id="signature" style="position:absolute; left:50px; top:430px">- Stevie Peterson, Marc's best friend's mother</p>
+<p style="position:absolute; top:460px; left:290px; color:white; font-size:14px">Referring to the "DMC" on Marc's chest</p>
+</div>
+</div>
+
+
+
+<!--Cross-->
+<div id="video3" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video3.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+<img style="position:absolute; top:0px; left:570px" src="cross.jpg">
+<p id="textBox">"Well I'm not a fan of tattoos but that's his body and I guess he does what he wants to. He's 22 years old now. I can't tell him how to live his life. I don't know, I don't like tattoos. That's all I got to say about that."</p>
+<p id="signature" style="position:absolute; left:150px; top:460px">- Dan Sonnen, Marc's father</p>
+<p style="position:absolute; top:490px; left:310px; color:white; font-size:14px">on Marc's body art</p>
+</div>
+</div>
+
+
+
+<!--Left Shoulder-->
+<div id="video4" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video4.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+<img style="position:absolute; top:0px; left:570px" src="leftshoulder.jpg">
+<p id="textBox">"It was funny, it was kind of like a business deal. (Marc) sat (dad) down and said, 'Look this is what I want to do and this is why I want to do it.' It was basically like a sales pitch. I was truly shocked he won him over. Not only that but then my dad paid for it too."</p>
+<p id="signature" style="position:absolute; left:160px; top:470px">- Chelsea Sonnen, Marc's sister</p>
+<p style="position:absolute; top:502px; left:370px; color:white; font-size:14px">On Marc's first tattoo</p>
+</div>
+</div>
+
+
+<!--Ribs-->
+<div id="video5" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video5.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+<img style="position:absolute; top:0px; left:570px" src="ribs.jpg">
+<p id="textBox">"We really talked about real life things. We got to ask her questions, obviously questions that we weren't going to be able to ask if she passed away. And I know that really helped me and that really helped Marc."</p>
+<p id="signature" style="position:absolute; left:160px; top:450px">- Chelsea Sonnen, Marc's sister</p>
+<p style="position:absolute; top:480px; left:260px; color:white; font-size:14px">On Marc's relationship with their mother</p>
+</div>
+</div>
+
+
+
+<!--rightshoulder-->
+<div id="video6" style="position:absolute; top:232px;">
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+<div id="videoDiv">
+<iframe src="video6.html" width="560" height="315" scrolling="no" style="margin:0px; border: 0px; background: #000;" allowTransparency="true"></iframe>
+<img style="position:absolute; top:0px; left:570px" src="rightshoulder.jpg">
+<p id="textBox">"She seemed to be an extraordinary woman and had a tremendous impact on Marc and his personality, sense of priorities, and sense of purpose. He credits her with all of that. I wish I could have met her."</p>
+<p id="signature" style="position:absolute; left:50px; top:450px">- Stevie Peterson, Marc's best friend's mother</p>
+<p style="position:absolute; top:482px; left:380px; color:white; font-size:14px">On Marc's mother Gayle</p>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = 'http://www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-30416-68']);
+
+  _gaq.push(['_setCustomVar',1,'Section','homepage',3]);
+  _gaq.push(['_setCustomVar',2,'Author','',3]);
+  _gaq.push(['_setCustomVar',3,'LoggedIn','no',2]);
+
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+function recordOutboundLink(link, category, action) {
+  try {
+    var myTracker=_gat._getTrackerByName();
+    myTracker._trackEvent(category ,  action);
+    setTimeout('document.location = "' + link.href + '"', 100)
+  }catch(err){}
+}
+</script>
+
+
+
+</body>
+
+</html>
